@@ -1,0 +1,32 @@
+import React from 'react'
+import './styles.scss'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min'
+
+const Navbar = () => {
+    return (
+        <nav className="navbar bg-dark">
+        <a className="navbar-brand" href="/#">
+          <img src="https://i.imgur.com/38GH9x0.png" width="120" height="60" alt="" loading="lazy"/>
+        </a>
+        <div className="">
+            <ul className="navbar-nav d-flex flex-row">
+            <li className="nav-item active">
+                <a className="nav-link" href="/#">Home <span className="sr-only">(current)</span></a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" href="/#">Features</a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" href="/#">Pricing</a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link disabled" href="/#">Disabled</a>
+            </li>
+            </ul>
+        </div>
+      </nav>
+    )
+}
+
+export default Navbar
