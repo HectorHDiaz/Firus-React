@@ -12,16 +12,16 @@ const Navbar = () => {
         <div className="">
             <ul className="navbar-nav d-flex flex-row">
             <li className="nav-item active">
-                <a className="nav-link" href="/#">Home <span className="sr-only">(current)</span></a>
+                <a className="nav-link" href="/#">Inicio <span className="sr-only">(current)</span></a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/#">Features</a>
+                <a className="nav-link" href="/#">Buscar</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/#">Pricing</a>
+                <a className="nav-link" href="/#">Informar</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link disabled" href="/#">Disabled</a>
+                <a className="nav-link disabled" href="/#">Contacto</a>
             </li>
             </ul>
         </div>
