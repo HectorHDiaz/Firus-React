@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar.js';
+import ItemListContainer from './components/ItemListContainer';
+
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Navbar/>
+      <ItemListContainer nombre="Hector" cantidad="14"/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

@@ -1,7 +1,8 @@
 import React from 'react'
-import './styles.scss'
+import './Navbar.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
+import CartWidget from './CartWidget';
 
 const Navbar = () => {
     return (
@@ -9,6 +10,7 @@ const Navbar = () => {
         <a className="navbar-brand" href="/#">
           <img src="https://i.imgur.com/38GH9x0.png" width="120" height="60" alt="" loading="lazy"/>
         </a>
+
         <div className="">
             <ul className="navbar-nav d-flex flex-row">
             <li className="nav-item active">
@@ -25,6 +27,9 @@ const Navbar = () => {
             </li>
             </ul>
         </div>
+
+        <CartWidget/>
+
       </nav>
     )
 }
