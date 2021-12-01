@@ -16,13 +16,13 @@ const ItemCount = ({stock}) =>{
 
     return(
         <div className="itemCount">
-            <p>Cuantos quieres agregar?</p>
+            <p>Cuantas mascotas quieres ayudar?</p>
             <p>{contador}</p>
             <button onClick={onVtr}>-</button>
             <button onClick={onAdd}>+</button>
-            <button>Agregar al Carrito</button>
+            <button>Ayudar!</button>
 
-            <p>Cliente: {"Hector"}, usted tiene {stock} productos en el carrito.</p>
+            <p>Cliente: {"Hector"}, usted tiene {stock} mascotas disponibles para ayudar.</p>
         </div>
     )
 }
