@@ -1,14 +1,27 @@
 import ItemCount from "./ItemCount"
+import ItemList from "./ItemList"
+import { getMascotas } from "./datos"
+import {useState, useEffect} from "react"
 
-const ItemListContainer = ({nombre,cantidad}) => {
+const ItemListContainer = () => {
+    const [mascotas, setMascotas] = useState([])
+
+    useEffect(() =>{
+        const listaMascotas = getMascotas()
+        listaMascotas.then(lista =>{
+            setMascotas(lista)
+        })
+        return(()=>{
+            setMascotas([])
+        })
+    },[])
 
     return(
-        <div>
-            <p>Cliente: {nombre}, usted tiene {cantidad} productos en el carrito.</p>
-            <ItemCount stock={cantidad}/>
+        <div className="ItemListContainer">
+            <ItemCount stock={14}/>    
+            <ItemList mascotas={mascotas}/>
         </div>
     )
-
 }
 
 export default ItemListContainer
