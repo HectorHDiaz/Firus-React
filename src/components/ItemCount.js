@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
-const ItemCount = ({stock}) =>{
-    const [contador, setContador] = useState(1)
+const ItemCount = ({initial, stock}) =>{
+    const [contador, setContador] = useState(initial)
 
     const onAdd = () =>{
         if(contador < stock){
@@ -9,7 +9,7 @@ const ItemCount = ({stock}) =>{
         }
     }
     const onVtr = () =>{
-        if(contador > 0){
+        if(contador > initial){
             setContador(contador-1)
         }
     }

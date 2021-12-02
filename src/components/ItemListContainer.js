@@ -18,7 +18,7 @@ const ItemListContainer = () => {
 
     return(
         <div className="ItemListContainer">
-            <ItemCount stock={14}/>    
+            <ItemCount initial={1} stock={14}/>    
             <ItemList mascotas={mascotas}/>
         </div>
     )
