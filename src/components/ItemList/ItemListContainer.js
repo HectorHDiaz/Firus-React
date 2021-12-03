@@ -1,6 +1,6 @@
-import ItemCount from "./ItemCount"
+import ItemCount from "../ItemCount"
 import ItemList from "./ItemList"
-import { getMascotas } from "./datos"
+import { getMascotas } from "../datos"
 import {useState, useEffect} from "react"
 
 const ItemListContainer = () => {

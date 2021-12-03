@@ -2,7 +2,7 @@ import React from 'react'
 import './Navbar.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
-import CartWidget from './CartWidget';
+import CartWidget from '../CartWidget';
 
 const Navbar = () => {
     return (

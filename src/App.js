@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar.js';
-import ItemListContainer from './components/ItemListContainer';
+import Navbar from './components/NavBar/Navbar';
+import ItemListContainer from './components/ItemList/ItemListContainer';
 
 
 function App() {
