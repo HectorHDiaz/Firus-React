@@ -45,3 +45,11 @@ export const getMascotas = () =>{
     })
 
 }
+
+export const getMascota = () =>{
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(listaMascotas[0])
+        }, 2000)
+    })
+}
