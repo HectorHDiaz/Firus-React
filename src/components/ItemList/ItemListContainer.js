@@ -1,24 +1,25 @@
-import ItemCount from "../ItemCount"
 import ItemList from "./ItemList"
-import { getMascotas } from "../datos"
+import { getEstadoList} from "../datos"
 import {useState, useEffect} from "react"
+import { useParams } from "react-router"
+
 
 const ItemListContainer = () => {
     const [mascotas, setMascotas] = useState([])
+    const {estadoId} = useParams()
 
     useEffect(() =>{
-        const listaMascotas = getMascotas()
+        const listaMascotas = getEstadoList(estadoId)
         listaMascotas.then(lista =>{
             setMascotas(lista)
         })
         return(()=>{
             setMascotas([])
         })
-    },[])
+    },[estadoId])
 
     return(
-        <div className="ItemListContainer">
-            <ItemCount initial={1} stock={14}/>    
+        <div>  
             <ItemList mascotas={mascotas}/>
         </div>
     )

@@ -3,6 +3,7 @@ import './Navbar.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 import CartWidget from '../CartWidget';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -13,23 +14,18 @@ const Navbar = () => {
 
         <div className="">
             <ul className="navbar-nav d-flex flex-row">
-            <li className="nav-item active">
-                <a className="nav-link" href="/#">Inicio <span className="sr-only">(current)</span></a>
+            <li className="nav-item">
+                <Link to={'/category/Adopcion'}>En Adopción</Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/#">Buscar</a>
+                <Link to={'/category/Perdidos'}>Perdidos</Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/#">Informar</a>
-            </li>
-            <li className="nav-item">
-                <a className="nav-link disabled" href="/#">Contacto</a>
+                <Link to={'/category/Adoptados'}>Adoptados</Link>
             </li>
             </ul>
         </div>
-
         <CartWidget/>
-
       </nav>
     )
 }
