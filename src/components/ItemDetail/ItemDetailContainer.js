@@ -1,7 +1,7 @@
-import { getMascota } from "../datos"
 import {useState, useEffect} from "react"
-import ItemDetail from "./ItemDetail"
 import { useParams } from "react-router"
+import { getMascota } from "../datos"
+import ItemDetail from "./ItemDetail"
 
 const ItemDetailContainer = () => {
     const [mascota, setMascota] = useState([])
@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
     },[mascotaId])
 
     return(
-        <div className="ItemDetailContainer">    
+        <div>    
            <ItemDetail mascota={mascota}/>
         </div>
     )

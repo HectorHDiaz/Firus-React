@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
+import "./itemCount.scss"
 
 const ItemCount = ({initial, stock}) =>{
     const [contador, setContador] = useState(initial)
@@ -16,13 +18,13 @@ const ItemCount = ({initial, stock}) =>{
 
     return(
         <div className="itemCount">
-            <p>Cuantas mascotas quieres ayudar?</p>
-            <p>{contador}</p>
-            <button onClick={onVtr}>-</button>
-            <button onClick={onAdd}>+</button>
-            <button>Ayudar!</button>
-
-            <p>Cliente: {"Hector"}, usted tiene {stock} mascotas disponibles para ayudar.</p>
+            <p>Cuantas ayudas quieres dar?</p>
+            <div className="main">
+                <button onClick={onVtr}>-</button>
+                <p>{contador}</p>
+                <button onClick={onAdd}>+</button>
+            </div>
+            <Link to={"/"}><button>Ayudar!</button></Link>
         </div>
     )
 }

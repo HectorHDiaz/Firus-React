@@ -144,19 +144,6 @@ const listaMascotas = [
      }
 ]
 
-export const getMascotas = () =>{
-
-    return new Promise((resolve)=>{
-
-        setTimeout(()=>{
-            console.log(JSON.parse(listaMascotas))
-            resolve(listaMascotas)
-        }, 2000)
-
-    })
-
-}
-
 export const getMascota = (id) =>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
@@ -165,10 +152,13 @@ export const getMascota = (id) =>{
     })
 }
 
-export const getEstadoList = (estado) =>{
+export const getMascotas = (estado) =>{
     return new Promise ((resolve) =>{
         setTimeout(()=>{
-            resolve(listaMascotas.filter(mascota=> mascota.estado===estado))
+            if(estado !== undefined){
+                resolve(listaMascotas.filter(mascota=> mascota.estado===estado))
+            }else
+                resolve(listaMascotas)
         }, 1000)
     })
 }

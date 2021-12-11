@@ -1,0 +1,22 @@
+.itemCount{
+    p{
+        margin: 0;
+    }
+
+
+    .main{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+        padding: 1em;
+        button{
+            width: 2em;
+            height: 2em;
+            border-style: none;
+            border-radius: 50%;
+            &:hover{
+                background-color:#fda5a5;
+            }
+        }
+    }
+}

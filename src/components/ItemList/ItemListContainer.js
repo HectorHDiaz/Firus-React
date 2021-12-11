@@ -1,7 +1,7 @@
-import ItemList from "./ItemList"
-import { getEstadoList} from "../datos"
-import {useState, useEffect} from "react"
 import { useParams } from "react-router"
+import {useState, useEffect} from "react"
+import { getMascotas} from "../datos"
+import ItemList from "./ItemList"
 
 
 const ItemListContainer = () => {
@@ -9,7 +9,7 @@ const ItemListContainer = () => {
     const {estadoId} = useParams()
 
     useEffect(() =>{
-        const listaMascotas = getEstadoList(estadoId)
+        const listaMascotas = getMascotas(estadoId)
         listaMascotas.then(lista =>{
             setMascotas(lista)
         })
