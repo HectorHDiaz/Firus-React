@@ -1,3 +1,13 @@
+Bienvenidos a Firus.
+
+Una aplicación para adoptar y ayudar a mascotas perdidas, abandonadas y callejeras.
+
+Vas a poder informar, ayudar y adotar mascotas(Callejeras, perdidas, adoptadas)
+
+Para el funcionamiento del proyecto, se instalaron las siguientes herramientas por NPM:
+- Bootstrap
+- SASS
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
