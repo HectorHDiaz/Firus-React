@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
+import { useState } from "react";
 import "./ItemDetail.scss"
 
+
 const ItemDetail = ({mascota}) => {
+
+const [cart, setCart] = useState(0)
+
+const cartAdd = (cantidad) =>{
+    setCart(cantidad)
+    console.log(cantidad)
+}
 
 return(
     // <div className="card-group d-flex justify-content-around">
@@ -21,8 +30,15 @@ return(
                             <li className="list-group-item">{mascota.especie}</li>
                             <li className="list-group-item">{mascota.edad}</li>
                         </ul>
-                        <Link to={`/category/${mascota.estado}`} className="card-link">Ayudar</Link>
-                        <ItemCount initial={1} stock={14}/> 
+                           { 
+                            (!cart)?
+                                <ItemCount initial={1} max={20} cartAdd={cartAdd}/> 
+                                :
+                                <div>
+                                    <p>Confirmás donar {cart} ayudas?</p>
+                                    <Link to={"/cart"} className="btn btn-primary">Confirmar Ayuda</Link>
+                                </div>
+                           }
                     </div>
                 </div>
             </div>

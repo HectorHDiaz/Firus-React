@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
 import "./itemCount.scss"
 
-const ItemCount = ({initial, stock}) =>{
+const ItemCount = ({initial, max, cartAdd}) =>{
     const [contador, setContador] = useState(initial)
 
     const onAdd = () =>{
-        if(contador < stock){
+        if(contador < max){
             setContador(contador+1)
         }
     }
@@ -24,7 +23,7 @@ const ItemCount = ({initial, stock}) =>{
                 <p>{contador}</p>
                 <button onClick={onAdd}>+</button>
             </div>
-            <Link to={"/"}><button>Ayudar!</button></Link>
+            <button className="btn btn-success" onClick={()=>cartAdd(contador)}>Ayudar!</button>
         </div>
     )
 }
