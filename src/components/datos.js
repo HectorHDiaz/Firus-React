@@ -8,7 +8,8 @@ const listaMascotas = [
         descripcion: "Nuestro primer perro rescatado de la calle. Tierno y tonton, pero muy leal y cariñoso",
         estado     : "Perdidos",
         nombre     : "Patita",
-        owner      : 0
+        owner      : 0,
+        donacion   : 100 
     },
     {
         id         : 1,
@@ -19,7 +20,8 @@ const listaMascotas = [
         descripcion: "La primera gata de la casa y fué la mejor! Es de River",
         estado     : "Perdidos",
         nombre     : "Minina",
-        owner      : 2
+        owner      : 2,
+        donacion   : 100 
     },
     {
         id         : 2,
@@ -30,7 +32,8 @@ const listaMascotas = [
         descripcion: "Se perdió un día. Esperemos que siga bien. Es muy cariñoso e inteligente",
         estado     : "Perdidos",
         nombre     : "Matute",
-        owner      : 0
+        owner      : 0,
+        donacion   : 100 
     },
     {
         id         : 3,
@@ -41,7 +44,8 @@ const listaMascotas = [
         descripcion: "Ella sigue siendo fuerte, cariñosa y fiel. Maulla y sabe pedir la comida",
         estado     : "Adoptados",
         nombre     : "Monina",
-        owner      : 0
+        owner      : 0,
+        donacion   : 100 
     },
     {
         id         : 4,
@@ -52,7 +56,8 @@ const listaMascotas = [
         descripcion: "Gato Alfa, Obero, cabulero para pedir comida y mea todo lo que encuentra. Es igual a Nacho Scocco",
         estado     : "Adoptados",
         nombre     : "Loki",
-        owner      : 0
+        owner      : 0,
+        donacion   : 100 
     },
     {
           id         : 5,
@@ -63,7 +68,8 @@ const listaMascotas = [
           descripcion: "Miedoso y timido. Adoptado de la calle, se cuida mucho pero es muy cariñoso. Tiene otra casa también.",
           estado     : "Adoptados",
           nombre     : "Simba",
-          owner      : 1
+          owner      : 1,
+          donacion : 100 
      },
      {
           id         : 6,
@@ -74,7 +80,8 @@ const listaMascotas = [
           descripcion: "Gato negro, gordo, tonto y feo. Nah, mentira. Es orgulloso por ser el único que entra a la casa. Es de Boca",
           estado     : "Adoptados",
           nombre     : "Tchaikovsky",
-          owner      : 1
+          owner      : 1,
+          donacion : 100 
      },
      {
           id         : 7,
@@ -85,7 +92,8 @@ const listaMascotas = [
           descripcion: "Del espacio le llegó algo muy especial, y lo atrapó y todos sus secretos el sabrá. Con superpoderes el ahora es BEN10",
           estado     : "Adopcion",
           nombre     : "Ben10",
-          owner      : 1
+          owner      : 1,
+          donacion : 100 
      },
      {
           id         : 8,
@@ -96,7 +104,8 @@ const listaMascotas = [
           descripcion: "GROGUUU",
           estado     : "Adoptados",
           nombre     : "Grogu",
-          owner      : 2
+          owner      : 2,
+          donacion : 100 
      },
      {
           id         : 9,
@@ -107,7 +116,8 @@ const listaMascotas = [
           descripcion: "Mili",
           estado     : "Adopcion",
           nombre     : "Mili",
-          owner      : 2
+          owner      : 2,
+          donacion : 100 
      },
      {
           id         : 10,
@@ -118,7 +128,8 @@ const listaMascotas = [
           descripcion: "Ponchi",
           estado     : "Perdidos",
           nombre     : "Ponchi",
-          owner      : 1
+          owner      : 1,
+          donacion : 100 
      },
          {
           id         : 11,
@@ -129,7 +140,8 @@ const listaMascotas = [
           descripcion: "Violetita",
           estado     : "Adopcion",
           nombre     : "Violeta",
-          owner      : 2
+          owner      : 2,
+          donacion : 100 
      },
      {
           id         : 12,
@@ -140,7 +152,8 @@ const listaMascotas = [
           descripcion: "Wendy",
           estado     : "Adopcion",
           nombre     : "Wendy",
-          owner      : 1
+          owner      : 1,
+          donacion : 100 
      }
 ]
 
