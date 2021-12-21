@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState} from 'react';
 
 const Context = React.createContext()
 
@@ -7,15 +7,28 @@ export const CartContextProvider = ({children}) => {
     const [itemsCart, setItemsCart] = useState([]); 
     
     function isInCart(id){
-        return itemsCart.some((item) => {
+        return itemsCart.some((item)=>{
             return item.id === id
         })
     }
-    function addItem(item, qty){
-        setItemsCart([...itemsCart, {...item, qty}])
+    function addItem(mascota, qty){
+        if(isInCart(mascota.id)){
+            setItemsCart(itemsCart.map((item)=>{
+                if(item.id === mascota.id){
+                    item.qty+= qty
+                    console.log(itemsCart)
+                }
+                return item
+            }))
+        }else{
+            setItemsCart([...itemsCart, {...mascota, qty}])
+            console.log(itemsCart)
+        }
     }
-    function removeItem(id){
-        setItemsCart()
+    function removeItem(mascota){
+        if(isInCart(mascota.id)){
+            setItemsCart(itemsCart.filter(item => item.id !== mascota.id))
+        }
     }
     function getCartQty(){
         return itemsCart.reduce((total, item)=>{
@@ -23,7 +36,7 @@ export const CartContextProvider = ({children}) => {
         }, 0)
     }
     function clearCart(){
-        return setItemsCart([   ])
+        return setItemsCart([])
     }
 
     return(

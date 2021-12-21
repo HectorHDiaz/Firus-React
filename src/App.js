@@ -8,7 +8,7 @@ import Cart from './components/cart/Cart';
 import Notification from './components/Notification/Notification';
 
 import {NotificationContextProvider} from './components/context/NotificationContext'
-import CartContext, { CartContextProvider } from './components/context/CartContext';
+import { CartContextProvider } from './components/context/CartContext';
 
 
 function App() {

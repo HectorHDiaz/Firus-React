@@ -161,7 +161,7 @@ export const getMascota = (id) =>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
             resolve(listaMascotas.find(mascota=> parseInt(mascota.id) === parseInt(id)))
-        }, 1000)
+        }, 0)
     })
 }
 
@@ -172,6 +172,6 @@ export const getMascotas = (estado) =>{
                 resolve(listaMascotas.filter(mascota=> mascota.estado===estado))
             }else
                 resolve(listaMascotas)
-        }, 1000)
+        }, 0)
     })
 }

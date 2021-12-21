@@ -1,5 +1,5 @@
 import ItemCount from "../ItemCount/ItemCount";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import "./ItemDetail.scss"
 import NotificationContext from "../context/NotificationContext";
 import CartContext from "../context/CartContext";
@@ -35,14 +35,15 @@ return(
                             <li className="list-group-item">{mascota.edad}</li>
                         </ul>
 
-                        {isInCart(mascota.id) ?
-                        <>
-                            <Link to='/' className='btn btn-success'>Terminar Compra</Link>
-                            <p className='btn btn-danger' onClick={removeItem(mascota.id)}>Eliminar de carrito</p>
-                        </>
-                            :
-                            <ItemCount initial={1} max={20}  cartAdd={cartAdd}/> 
-                        }
+                        {isInCart(mascota.id)?
+                        <div>
+                        <Link to='/' className='btn btn-success'>Terminar Compra</Link>
+                        <button className='btn btn-danger' onClick={()=>removeItem(mascota)}>Eliminar de carrito</button>
+                        </div>
+                        :
+                        <></>
+                    }
+                    <ItemCount initial={1} max={20} cartAdd={cartAdd}/>
                     </div>
                 </div>
             </div>
