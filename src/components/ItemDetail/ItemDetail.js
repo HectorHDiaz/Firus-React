@@ -2,16 +2,19 @@ import ItemCount from "../ItemCount/ItemCount";
 import { useState, useContext } from "react";
 import "./ItemDetail.scss"
 import NotificationContext from "../context/NotificationContext";
+import CartContext from "../context/CartContext";
+import {Link} from 'react-router-dom'
+
 
 const ItemDetail = ({mascota}) => {
 
 const {setNotification} = useContext(NotificationContext)
+const {addItem, isInCart, removeItem} = useContext(CartContext)
 
 
-const [cart, setCart] = useState(0)
-const cartAdd = (cantidad) =>{
-    setCart(cantidad)
-    console.log(setNotification(`Agregado a ${cantidad} de ayudas`, 'success'))
+const cartAdd = (qty) =>{
+    addItem(mascota, qty)
+    setNotification(`Agregado a ${qty} de ayudas`, 'success')
 }
 
 return(
@@ -31,7 +34,15 @@ return(
                             <li className="list-group-item">{mascota.especie}</li>
                             <li className="list-group-item">{mascota.edad}</li>
                         </ul>
-                            <ItemCount initial={1} max={20} cartAdd={cartAdd}/> 
+
+                        {isInCart(mascota.id) ?
+                        <>
+                            <Link to='/' className='btn btn-success'>Terminar Compra</Link>
+                            <p className='btn btn-danger' onClick={removeItem(mascota.id)}>Eliminar de carrito</p>
+                        </>
+                            :
+                            <ItemCount initial={1} max={20}  cartAdd={cartAdd}/> 
+                        }
                     </div>
                 </div>
             </div>
