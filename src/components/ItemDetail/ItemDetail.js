@@ -37,7 +37,7 @@ return(
 
                         {isInCart(mascota.id)?
                         <div>
-                        <Link to='/' className='btn btn-success'>Terminar Compra</Link>
+                        <Link to='/cart' className='btn btn-success'>Terminar Compra</Link>
                         <button className='btn btn-danger' onClick={()=>removeItem(mascota)}>Eliminar de carrito</button>
                         </div>
                         :

@@ -4,7 +4,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Navbar from './components/NavBar/Navbar';
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
-import Cart from './components/cart/Cart';
+import CartContainer from './components/cart/CartContainer';
 import Notification from './components/Notification/Notification';
 
 import {NotificationContextProvider} from './components/context/NotificationContext'
@@ -22,7 +22,7 @@ function App() {
             <Notification/>
             <Routes>
               <Route exact path="/" element={<ItemListContainer/>}/>
-              <Route exact path="/cart" element={<Cart/>}/>
+              <Route exact path="/cart" element={<CartContainer/>}/>
               <Route exact path="/category/:estadoId" element={<ItemListContainer/>}/>
               <Route exact path="/item/:mascotaId" element= {<ItemDetailContainer/>}/>
             </Routes>

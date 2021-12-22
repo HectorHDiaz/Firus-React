@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import {Link} from 'react-router-dom'
 import CartContext from '../context/CartContext'
 
 const CartWidget = () =>{
@@ -11,9 +12,15 @@ const CartWidget = () =>{
 
     return(
         <div>
-            <img src={'https://i.imgur.com/B3JYpPP.png'} style={imgStyle} alt="carrito"></img>
+            <Link to={"/cart"}><img src={'https://i.imgur.com/B3JYpPP.png'} style={imgStyle} alt="carrito"></img></Link>
+            {getCartQty() === 0?
+            <></>
+            :
+            <>
             <p style={{color: 'white'}} >{getCartQty()}</p>
-            <p style={{color: 'white'}} onClick={clearCart}>X</p>
+            <p style={{color: 'white'}} onClick={clearCart}>x</p>
+            </>
+            }
         </div>
     )
 }

@@ -16,13 +16,11 @@ export const CartContextProvider = ({children}) => {
             setItemsCart(itemsCart.map((item)=>{
                 if(item.id === mascota.id){
                     item.qty+= qty
-                    console.log(itemsCart)
                 }
                 return item
             }))
         }else{
             setItemsCart([...itemsCart, {...mascota, qty}])
-            console.log(itemsCart)
         }
     }
     function removeItem(mascota){
