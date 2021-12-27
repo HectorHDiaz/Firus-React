@@ -156,22 +156,3 @@ const listaMascotas = [
           donacion : 100 
      }
 ]
-
-export const getMascota = (id) =>{
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            resolve(listaMascotas.find(mascota=> parseInt(mascota.id) === parseInt(id)))
-        }, 0)
-    })
-}
-
-export const getMascotas = (estado) =>{
-    return new Promise ((resolve) =>{
-        setTimeout(()=>{
-            if(estado !== undefined){
-                resolve(listaMascotas.filter(mascota=> mascota.estado===estado))
-            }else
-                resolve(listaMascotas)
-        }, 0)
-    })
-}
