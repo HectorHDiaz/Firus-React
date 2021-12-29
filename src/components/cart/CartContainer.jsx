@@ -2,12 +2,26 @@ import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
 import CartContext from '../context/CartContext'
 import CartItem from './CartItem'
-
+import {db} from '../../services/firebase/firebase'
+import {addDoc, collection, Timestamp} from 'firebase/firestore'
 
 
 export default function CartContainer() {
 
-    const {itemsCart, clearCart} = useContext(CartContext)
+    const {itemsCart, clearCart, getTotal} = useContext(CartContext)
+
+    function confirmOrder(){
+
+        const objOrder = {
+            buyer: {name: 'Hector Diaz',phone: '11 2252-6521', email: 'atonomo.4s@gmail.com'},
+            items: itemsCart,
+            date: Timestamp.fromDate(new Date()),
+            total: getTotal(),
+        }
+        
+        addDoc(collection(db, 'orders'), objOrder).then(({id})=>{console.log(id)})
+    }
+
 
     if(itemsCart.length === 0){
 
@@ -48,13 +62,13 @@ export default function CartContainer() {
                             <div className="order_total">
                                 <div className="order_total_content text-md-right">
                                     <div className="order_total_title">Total:</div>
-                                    <div className="order_total_amount">{itemsCart.reduce((total, item)=>{return (total + (item.qty * item.donacion))}, 0)}
+                                    <div className="order_total_amount">{getTotal()}
                                     </div>
                                 </div>
                             </div>
                             <div className="cart_buttons"> 
                                 <button type="button" className="button cart_button_clear" onClick={()=>clearCart()}>Vaciar Carrito</button>
-                                <Link to="/"><button type="button" className="button cart_button_checkout" onClick={clearCart}>Confirmar Compra</button> </Link>
+                               <button type="button" className="button cart_button_checkout" onClick={confirmOrder}>Confirmar Compra</button>
                             </div>
                         </div>
                     </div>
