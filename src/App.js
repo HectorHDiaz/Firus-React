@@ -5,7 +5,6 @@ import Navbar from './components/NavBar/Navbar';
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import CartContainer from './components/cart/CartContainer';
-import Notification from './components/Notification/Notification';
 
 import {NotificationContextProvider} from './components/context/NotificationContext'
 import { CartContextProvider } from './components/context/CartContext';
@@ -19,7 +18,6 @@ function App() {
         <NotificationContextProvider>
           <BrowserRouter>
             <Navbar/>
-            <Notification/>
             <Routes>
               <Route exact path="/" element={<ItemListContainer/>}/>
               <Route exact path="/cart" element={<CartContainer/>}/>
