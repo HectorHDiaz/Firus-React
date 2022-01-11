@@ -8,10 +8,13 @@ import {db} from '../../services/firebase/firebase'
 
 const ItemListContainer = () => {
     const [mascotas, setMascotas] = useState([])
-    const {estadoId} = useParams()
+    let {estadoId} = useParams()
+    if(!estadoId){
+        estadoId = 'Todos'
+    }
 
     useEffect(() =>{
-        if(!estadoId){
+        if(estadoId === 'Todos'){
             getDocs(collection(db,'mascotas')).then((querySnapshot)=>{
                 const mascotas = querySnapshot.docs.map(doc => {
                     return {id: doc.id, ...doc.data()}
@@ -41,7 +44,7 @@ const ItemListContainer = () => {
 
     return(
         <div>  
-            <ItemList mascotas={mascotas}/>
+            <ItemList mascotas={mascotas} id={estadoId}/>
         </div>
     )
 }

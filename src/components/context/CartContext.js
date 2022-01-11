@@ -5,6 +5,10 @@ const Context = React.createContext()
 export const CartContextProvider = ({children}) => {
    
     const [itemsCart, setItemsCart] = useState([]); 
+
+    function getTotal(){
+       return itemsCart.reduce((total, item)=>{return (total + (item.qty * item.donacion))}, 0)
+    }
     
     function isInCart(id){
         return itemsCart.some((item)=>{
@@ -38,7 +42,7 @@ export const CartContextProvider = ({children}) => {
     }
 
     return(
-        <Context.Provider value={{itemsCart, addItem, isInCart, getCartQty, clearCart, removeItem}}>
+        <Context.Provider value={{itemsCart, addItem, isInCart, getCartQty, clearCart, removeItem, getTotal}}>
             {children}
         </Context.Provider>
     )
