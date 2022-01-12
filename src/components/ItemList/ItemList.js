@@ -6,8 +6,8 @@ const ItemList = (props) => {
 return(
 
     <div >
-        {(props.id === 'Todos') ?
-            <h1 className="title">Bienvenido a Firus</h1>
+        {props.id === 'Todos' ?
+            <h1 className="title">Bienvenido a Firus!</h1>
             :
             <></>
         }

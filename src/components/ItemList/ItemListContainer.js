@@ -8,6 +8,7 @@ import {db} from '../../services/firebase/firebase'
 
 const ItemListContainer = () => {
     const [mascotas, setMascotas] = useState([])
+    const [loading, setLoading] = useState(true)
     let {estadoId} = useParams()
     if(!estadoId){
         estadoId = 'Todos'
@@ -22,7 +23,9 @@ const ItemListContainer = () => {
                     setMascotas(mascotas)
                 }).catch((error)=>{
                     console.log("Error looking for Mascotas")
-                }).finally(console.log("All done"))
+                }).finally(() => {
+                    setLoading(false)
+                })
     
             return(()=>{
                 setMascotas([])
@@ -41,6 +44,9 @@ const ItemListContainer = () => {
         }
     },[estadoId])
     
+    if(loading) {
+        return <h1>Loading...</h1>
+    }
 
     return(
         <div>  

@@ -1,8 +1,35 @@
+a{
+    color:#fafafa !important;
+    padding:15px !important;
+    text-decoration: none !important;
+}
+
 .navbar{
     background-color: #bf3d4a;
 }
 
-a{
-    color:#fafafa !important;
-    padding:5px !important;
+.nav-item{
+    padding: 5px 15px;
+    margin: 0 5em;
+    color: #fafafa;
+    outline: none;
+    border-style: none;
+    border-radius: 5px;
+    &:hover {
+        color: #565652;
+        background-color: orange;
+        border-color: #ff8080;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem #ff808050;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    &:focus {
+        border-color: #ff8080;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem #ff808050;
+    }
+    a{
+        font-size: 1.5em;
+    }
 }
+

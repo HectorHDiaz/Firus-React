@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <Link to={"/"} className="navbar-brand">
-                <img src="https://i.imgur.com/38GH9x0.png" width="120" height="60" alt="" loading="lazy"/>
+                <img src="https://i.imgur.com/38GH9x0.png" width="150" alt="" loading="lazy"/>
             </Link>
             <div className="">
                 <ul className="navbar-nav d-flex flex-row">

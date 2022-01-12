@@ -6,6 +6,7 @@ import {db} from '../../services/firebase/firebase'
 
 const ItemDetailContainer = () => {
     const [mascota, setMascota] = useState([])
+    const [loading, setLoading] = useState(true)
     const {mascotaId} = useParams()
     
     useEffect(() =>{
@@ -14,10 +15,16 @@ const ItemDetailContainer = () => {
             const mascota = {id: querySnapshot.id, ...querySnapshot.data()}
             setMascota(mascota)
         }).catch((error)=>{
-            console.log("Error looking for Mascotas")
-        }).finally(console.log("All done"))
+            console.log("Error looking for Mascotas" + error)
+        }).finally(() => {
+            setLoading(false)
+        })
         
     },[mascotaId])
+
+    if(loading) {
+        return <h1>Loading...</h1>
+    }
 
     return(
         <div>    

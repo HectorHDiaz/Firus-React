@@ -20,7 +20,7 @@ const cartAdd = (qty) =>{
 return(
     // <div className="card-group d-flex justify-content-around">
     <div className="container">
-        <div className="card mb-3" style={{width:"60vw"}}>
+        <div className="card Detail mb-3" style={{width:"60vw"}}>
             <div className="row g-0">
                 <div className="col-md-6">
                     <img src={mascota.imagen} className="img-fluid rounded-start" alt={mascota.nombre}/>
