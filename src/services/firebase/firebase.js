@@ -1,15 +1,34 @@
 import * as firebase from 'firebase/app'
-import {getFirestore} from 'firebase/firestore'
+import {collection, getDocs, getFirestore, query} from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBiJ5mVbjjpmiHYzxykSHbi2XtbwbYBNqM",
-  authDomain: "firus-091218.firebaseapp.com",
-  projectId: "firus-091218",
-  storageBucket: "firus-091218.appspot.com",
-  messagingSenderId: "487934367007",
-  appId: "1:487934367007:web:f8c776e91f2236a53b4c2a"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
 export const db = getFirestore(app)
+
+export function getMascotas(key, operator, value){
+  return new Promise((resolve, reject)=>{
+    const collectionQuery = key && operator && value 
+    ?
+    query(collection(db,'items'), where(key,operator,value))
+    :
+    collection(db, 'items')
+
+    getDocs(collectionQuery).then(querySnapshot => {
+      const mascotas = querySnapshot.docs.map(mascota => {
+        return {id: mascota.id, ...mascota.data()}
+      })
+      resolve(mascotas)
+    }).catch(error => {
+      reject('Error obteniendo productos: ', error)
+    })
+  })
+}

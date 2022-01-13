@@ -3,14 +3,15 @@ import {Link} from 'react-router-dom'
 import CartContext from '../context/CartContext'
 import CartItem from './CartItem'
 import {db} from '../../services/firebase/firebase'
-import {addDoc, collection, Timestamp} from 'firebase/firestore'
+import { collection, addDoc, doc, writeBatch, Timestamp, getDoc } from 'firebase/firestore'
 
 
 export default function CartContainer() {
-
+    const [processingOrder, setProcessingOrder] = useState(false)
     const {itemsCart, clearCart, getTotal} = useContext(CartContext)
 
     function confirmOrder(){
+        setProcessingOrder(true)
 
         const objOrder = {
             buyer: {name: 'Hector Diaz',phone: '11 2252-6521', email: 'atonomo.4s@gmail.com'},
