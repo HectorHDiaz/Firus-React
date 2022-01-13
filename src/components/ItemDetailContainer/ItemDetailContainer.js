@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react"
 import { useParams } from "react-router"
-import ItemDetail from "./ItemDetail"
+import ItemDetail from "../ItemDetail/ItemDetail"
 import { getDoc, doc} from "firebase/firestore"
 import {db} from '../../services/firebase/firebase'
 

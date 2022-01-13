@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
-import CartContext from '../context/CartContext'
-import CartItem from './CartItem'
+import CartContext from '../../context/CartContext'
+import CartItem from '../CartItem/CartItem'
 import {db} from '../../services/firebase/firebase'
 import { collection, addDoc, doc, writeBatch, Timestamp, getDoc } from 'firebase/firestore'
 

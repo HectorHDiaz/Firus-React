@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from "react"
-import ItemList from "./ItemList"
+import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router"
 import {getMascotas} from "../../services/firebase/firebase"
 
