@@ -1,5 +1,5 @@
 import * as firebase from 'firebase/app'
-import {collection, getDocs, getFirestore, query} from 'firebase/firestore'
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
@@ -16,11 +16,7 @@ export const db = getFirestore(app)
 
 export function getMascotas(key, operator, value){
   return new Promise((resolve, reject)=>{
-    const collectionQuery = key && operator && value 
-    ?
-    query(collection(db,'items'), where(key,operator,value))
-    :
-    collection(db, 'items')
+    const collectionQuery = (key && operator && value) ? query(collection(db,'mascotas'), where(key,operator,value)) : collection(db, 'mascotas')
 
     getDocs(collectionQuery).then(querySnapshot => {
       const mascotas = querySnapshot.docs.map(mascota => {

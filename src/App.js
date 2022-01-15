@@ -2,13 +2,12 @@ import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import Navbar from './components/NavBar/Navbar';
-import ItemListContainer from './components/ItemList/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
-import CartContainer from './components/cart/CartContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import CartContainer from './components/Cart/CartContainer';
 
-import {NotificationContextProvider} from './components/context/NotificationContext'
-import { CartContextProvider } from './components/context/CartContext';
-
+import {NotificationContextProvider} from './context/NotificationContext'
+import { CartContextProvider } from './context/CartContext'
 
 function App() {
 

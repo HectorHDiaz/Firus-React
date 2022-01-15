@@ -1,9 +1,9 @@
-import React, {useContext} from 'react'
+import React, {useState, useContext} from 'react'
 import {Link} from 'react-router-dom'
 import CartContext from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
 import {db} from '../../services/firebase/firebase'
-import { collection, addDoc, doc, writeBatch, Timestamp, getDoc } from 'firebase/firestore'
+import { collection, addDoc,Timestamp} from 'firebase/firestore'
 
 
 export default function CartContainer() {
@@ -23,6 +23,9 @@ export default function CartContainer() {
         addDoc(collection(db, 'orders'), objOrder).then(({id})=>{console.log(id)})
     }
 
+    if(processingOrder) {
+        return <h1>Se esta procesando su orden</h1>
+    }
 
     if(itemsCart.length === 0){
 

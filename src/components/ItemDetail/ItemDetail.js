@@ -1,7 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount";
 import { useContext } from "react";
 import "./ItemDetail.scss"
-import NotificationContext from "../context/NotificationContext";
+import NotificationContext from "../../context/NotificationContext";
 import CartContext from "../../context/CartContext";
 import {Link} from 'react-router-dom'
 

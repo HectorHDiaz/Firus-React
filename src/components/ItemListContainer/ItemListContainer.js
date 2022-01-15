@@ -13,8 +13,8 @@ const ItemListContainer = () => {
 
     useEffect(()=>{
         setLoading(true)
-        getMascotas('estado', '==', estadoId).then(mascotas => {
-            setMascotas(mascotas)
+        getMascotas('estado', '==', estadoId).then(items => {
+            setMascotas(items)
         }).catch(error =>{
             console.log(error)
         }).finally(()=>{
