@@ -19,7 +19,6 @@ _Que cosas necesitas para instalar el software y como instalarlas_
 
 ```
 npm run client install
-
 ```
 ##### Ejecutar el siguiente comando para correr el proyecto.
 
