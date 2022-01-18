@@ -28,7 +28,7 @@ function CartItem({mascota}) {
                     <div className="cart_item_text">{mascota.donacion}</div>
                 </div>
                 <div className="cart_item_total cart_info_col">
-                    <div className="cart_item_title">Total</div>
+                    <div className="cart_item_title">SubTotal</div>
                     <div className="cart_item_text">{mascota.donacion * mascota.qty}</div>
                 </div>
                 <div className="cart_item_total cart_info_col">

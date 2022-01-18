@@ -8,7 +8,7 @@ return(
         {props.category === undefined ?
             <>
             <h1 className="title">Bienvenido a Firus!</h1>
-            <h2>Todos</h2>
+            <h2>La web para ayudar y donar a mascotas necesitadas.</h2>
             </>
             :
             <></>

@@ -109,7 +109,12 @@ export default function CartContainer() {
                                     </div>
                                     <div className="cart_buttons"> 
                                         <button type="button" className="btn btn-danger" onClick={()=>clearCart()}>Vaciar Carrito</button>
-                                    <button type="button" className="btn btn-success" onClick={confirmOrder}>Confirmar Compra</button>
+                                        {
+                                            contact.email === '' &contact.name==='' &contact.phone==='' ?
+                                            <button type="button" disabled className="btn btn-success" onClick={confirmOrder}>Confirmar Compra</button>
+                                            :
+                                            <button type="button" className="btn btn-success" onClick={confirmOrder}>Confirmar Compra</button>
+                                        }
                                     </div>
                                 </div>
                             </div>
