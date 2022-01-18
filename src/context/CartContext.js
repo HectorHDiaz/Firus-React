@@ -7,21 +7,21 @@ export const CartContextProvider = ({children}) => {
     const [itemsCart, setItemsCart] = useState([]); 
 
     function getTotal(){
-       return itemsCart.reduce((total, item)=>{return (total + (item.qty * item.donacion))}, 0)
+       return itemsCart.reduce((total, mascot)=>{return (total + (mascot.qty * mascot.donacion))}, 0)
     }
     
-    function isInCart(id){
-        return itemsCart.some((item)=>{
-            return item.id === id
+    function isInCart(mascotaId){
+        return itemsCart.some((mascot)=>{
+            return mascot.id === mascotaId
         })
     }
     function addItem(mascota, qty){
         if(isInCart(mascota.id)){
-            setItemsCart(itemsCart.map((item)=>{
-                if(item.id === mascota.id){
-                    item.qty+= qty
+            setItemsCart(itemsCart.map((mascot)=>{
+                if(mascot.id === mascota.id){
+                    mascot.qty+= qty
                 }
-                return item
+                return mascot
             }))
         }else{
             setItemsCart([...itemsCart, {...mascota, qty}])
@@ -29,12 +29,12 @@ export const CartContextProvider = ({children}) => {
     }
     function removeItem(mascota){
         if(isInCart(mascota.id)){
-            setItemsCart(itemsCart.filter(item => item.id !== mascota.id))
+            setItemsCart(itemsCart.filter(mascot => mascot.id !== mascota.id))
         }
     }
     function getCartQty(){
-        return itemsCart.reduce((total, item)=>{
-            return (total + item.qty)
+        return itemsCart.reduce((total, mascot)=>{
+            return (total + mascot.qty)
         }, 0)
     }
     function clearCart(){

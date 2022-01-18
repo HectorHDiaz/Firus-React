@@ -1,6 +1,6 @@
 .Detail{
     &:hover{
-        transform:none;
-        box-shadow: none;
+        transform:none !important;
+        box-shadow: none !important;
     }
 }

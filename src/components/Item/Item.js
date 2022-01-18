@@ -1,5 +1,5 @@
-import "./Item.scss"
 import { Link } from "react-router-dom"
+import "./Item.scss"
 
 const Item = ({mascota}) => {
 

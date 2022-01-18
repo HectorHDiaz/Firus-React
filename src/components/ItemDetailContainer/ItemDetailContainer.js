@@ -1,21 +1,18 @@
 import {useState, useEffect} from "react"
 import { useParams } from "react-router"
+import {getMascota} from '../../services/firebase/firebase'
 import ItemDetail from "../ItemDetail/ItemDetail"
-import { getDoc, doc} from "firebase/firestore"
-import {db} from '../../services/firebase/firebase'
 
 const ItemDetailContainer = () => {
+    const {mascotaId} = useParams()
     const [mascota, setMascota] = useState([])
     const [loading, setLoading] = useState(true)
-    const {mascotaId} = useParams()
     
     useEffect(() =>{
-
-        getDoc(doc(db, 'mascotas', mascotaId)).then((querySnapshot)=>{
-            const mascota = {id: querySnapshot.id, ...querySnapshot.data()}
-            setMascota(mascota)
+        getMascota(mascotaId).then(result=>{
+            setMascota(result)
         }).catch((error)=>{
-            console.log("Error looking for Mascotas" + error)
+            setMascota(error)
         }).finally(() => {
             setLoading(false)
         })
@@ -27,9 +24,13 @@ const ItemDetailContainer = () => {
     }
 
     return(
-        <div>    
-           <ItemDetail mascota={mascota}/>
-        </div>
+        <>
+        {mascota ?
+        <div><ItemDetail mascota={mascota}/></div>
+        :
+        <div><h1>Selección de Mascota incorrecta! Por favor, intenté buscar otro mascota</h1></div>
+        }
+        </>
     )
 }
 

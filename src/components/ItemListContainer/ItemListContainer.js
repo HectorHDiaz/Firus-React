@@ -9,12 +9,12 @@ import {getMascotas} from "../../services/firebase/firebase"
 const ItemListContainer = () => {
     const [mascotas, setMascotas] = useState([])
     const [loading, setLoading] = useState(true)
-    let {estadoId} = useParams()
+    let {categoryId} = useParams()
 
     useEffect(()=>{
         setLoading(true)
-        getMascotas('estado', '==', estadoId).then(items => {
-            setMascotas(items)
+        getMascotas('estado', '==', categoryId).then(mascot => {
+            setMascotas(mascot)
         }).catch(error =>{
             console.log(error)
         }).finally(()=>{
@@ -24,16 +24,22 @@ const ItemListContainer = () => {
         return(()=>{
             setMascotas([])
         })
-    },[estadoId])
+    },[categoryId])
 
     if(loading) {
         return <h1>Loading...</h1>
     }
 
     return(
-        <div>  
-            <ItemList mascotas={mascotas} id={estadoId}/>
-        </div>
+        <>
+        {
+            mascotas.length ? 
+                <div><ItemList mascotas={mascotas} category={categoryId}/></div>  
+            :
+                <div><h1>Sección incorrecta! Por favor, intenté buscar otra sección</h1></div>
+        }
+        
+        </>
     )
 }
 

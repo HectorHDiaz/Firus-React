@@ -1,25 +1,21 @@
 import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
 import CartContext from '../../context/CartContext'
+import './CartWidget.scss'
 
 const CartWidget = () =>{
-    const { getCartQty, clearCart} = useContext(CartContext)
-
-    const imgStyle = {
-        width: '50px',
-        marginRight:'30px'
-    }
+    const {getCartQty, clearCart} = useContext(CartContext)
 
     return(
         <div>
-            <Link to={"/cart"}><img src={'https://i.imgur.com/B3JYpPP.png'} style={imgStyle} alt="carrito"></img></Link>
-            {getCartQty() === 0?
-            <></>
+            <Link to={"/cart"}><img src={'https://i.imgur.com/B3JYpPP.png'} className="imgStyle" alt="carrito"></img></Link>
+            {getCartQty() === 0 ?
+                <></>
             :
-            <>
-            <p style={{color: 'white'}} >{getCartQty()}</p>
-            <p style={{color: 'white'}} onClick={clearCart}>x</p>
-            </>
+                <div className="info">
+                    <p className='qty' >{getCartQty()}</p>
+                    <img alt="tachito" onClick={clearCart} className="tachito" src="https://image.flaticon.com/icons/png/512/40/40002.png"/>
+                </div>
             }
         </div>
     )

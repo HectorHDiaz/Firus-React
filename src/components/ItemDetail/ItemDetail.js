@@ -1,24 +1,19 @@
-import ItemCount from "../ItemCount/ItemCount";
 import { useContext } from "react";
-import "./ItemDetail.scss"
-import NotificationContext from "../../context/NotificationContext";
+import {Link} from 'react-router-dom';
+
 import CartContext from "../../context/CartContext";
-import {Link} from 'react-router-dom'
+import ItemCount from "../ItemCount/ItemCount";
+import "./ItemDetail.scss";
 
 
 const ItemDetail = ({mascota}) => {
 
-const {setNotification} = useContext(NotificationContext)
 const {addItem, isInCart, removeItem} = useContext(CartContext)
-
-
 const cartAdd = (qty) =>{
     addItem(mascota, qty)
-    setNotification(`Agregado a ${qty} de ayudas`, 'success')
 }
 
 return(
-    // <div className="card-group d-flex justify-content-around">
     <div className="container">
         <div className="card Detail mb-3" style={{width:"60vw"}}>
             <div className="row g-0">
@@ -42,8 +37,8 @@ return(
                         </div>
                         :
                         <></>
-                    }
-                    <ItemCount initial={1} max={20} cartAdd={cartAdd}/>
+                        }
+                        <ItemCount initial={1} max={20} cartAdd={cartAdd}/>
                     </div>
                 </div>
             </div>
