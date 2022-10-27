@@ -33,7 +33,7 @@ function CartItem({mascota}) {
                 </div>
                 <div className="cart_item_total cart_info_col">
                     <div className="cart_item_title">Eliminar</div>
-                    <div className="cart_item_text" onClick={()=>removeItem(mascota)}><img alt="tachito" style={{width:"30px"} }src="https://image.flaticon.com/icons/png/512/40/40002.png"/></div>
+                    <div className="cart_item_text" onClick={()=>removeItem(mascota)}><img alt="tachito" style={{width:"30px"} }src="../../../public/tachito.png"/></div>
                 </div>
             </div>
         </li>

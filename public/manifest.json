@@ -1,6 +1,6 @@
 {
-  "short_name": "Firus App",
-  "name": "Firus Web App",
+  "short_name": "Firus React App",
+  "name": "Firus Donation App",
   "icons": [
     {
       "src": "favicon.ico",

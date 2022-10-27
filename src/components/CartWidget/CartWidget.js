@@ -14,7 +14,7 @@ const CartWidget = () =>{
             :
                 <div className="info">
                     <p className='qty' >{getCartQty()}</p>
-                    <img alt="tachito" onClick={clearCart} className="tachito" src="https://image.flaticon.com/icons/png/512/40/40002.png"/>
+                    <img alt="tachito" onClick={clearCart} className="tachito" src="../../../public/tachito.png"/>
                 </div>
             }
         </div>
